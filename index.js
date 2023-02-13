@@ -13,7 +13,7 @@
 durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days') // поверне '362 days'
 */
 
-function durationBetweenDates (firstDate = '01.01.2001', secondDate = '12.02.2023', measure = 'seconds') {
+function durationBetweenDates (firstDate = '01.01.2001', secondDate = '12.02.2023', measure = 'minutes') {
 
     firstDate =  new Date(firstDate);
     secondDate =  new Date(secondDate);
@@ -30,10 +30,10 @@ function durationBetweenDates (firstDate = '01.01.2001', secondDate = '12.02.202
       return 0;
     }
       switch (measure) {
-        case "days"   : return Math.floor(duration / (1000 * 60 * 60 * 24)); 
-        case "hours"  : return Math.floor(duration / (1000 * 60 * 60)); 
-        case "minutes": return Math.floor(duration / (1000 * 60));
-        case "seconds": return Math.floor(duration / 1000);
+        case "days"   : return Math.floor(duration / (1000 * 60 * 60 * 24)) + ' days'; 
+        case "hours"  : return Math.floor(duration / (1000 * 60 * 60)) + ' hours'; 
+        case "minutes": return Math.floor(duration / (1000 * 60)) + ' minutes';
+        case "seconds": return Math.floor(duration / 1000) + ' seconds';
         default: return `choose correct measure ('days', 'hours', 'minutes', 'seconds')`;
       }
      }
